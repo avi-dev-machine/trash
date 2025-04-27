@@ -1,0 +1,1554 @@
+DAY 1: 10/3/25
+DATAFLOW MODEL
+1. Implementation of AND Gate in Dataflow Model
+VHDL Code:
+entity and_df is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end and_df;
+architecture Dataflow of and_df is
+begin
+Y<=A and B;
+end Dataflow;
+
+Schematic:
+
+
+TBW Code:
+entity and_df_tb is
+--  Port ( );
+end and_df_tb;
+architecture Dataflow of and_df_tb is
+component and_df is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:and_df port map (A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+
+
+2. Implementation of OR Gate in Dataflow Model
+VHDL Code:
+entity or_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end or_d;
+architecture Dataflow of or_d is
+begin
+Y<=A or B;
+end Dataflow;
+
+
+
+
+Schematic:
+
+TBW Code:
+entity or_d_tb is
+   --Port(); 
+end or_d_tb;
+
+architecture Dataflow of or_d_tb is
+component or_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:or_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+
+3. Implementation of NOT Gate in Dataflow Model
+VHDL Code:
+entity not_df is
+    Port ( A : in STD_LOGIC;
+            Y : out STD_LOGIC);
+end not_df;
+architecture Dataflow of not_df is
+begin
+Y<=not A;
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity not_df_tb is
+    --Port ();
+end not_df_tb;
+
+architecture Dataflow of not_df_tb is
+component not_df is
+    Port ( A : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:not_df port map(A=>A1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+
+4. Implementation of NOR Gate in Dataflow Model
+VHDL Code:
+entity nor_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nor_d;
+architecture Dataflow of nor_d is
+begin
+Y<=A nor B;
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity nor_d_tb is
+    --Port ();
+end nor_d_tb;
+architecture Dataflow of nor_d_tb is
+component nor_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nor_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+5. Implementation of XOR Gate in Dataflow Model
+VHDL Code:
+entity xor_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end xor_d;
+architecture Dataflow of xor_d is
+begin
+Y<=A xor B;
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity xor_d_tb is
+    --Port ();
+end xor_d_tb;
+
+architecture Dataflow of xor_d_tb is
+component xor_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:xor_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+6. Implementation of XNOR Gate in Dataflow Model
+VHDL Code:
+entity xnor_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end xnor_d;
+architecture Dataflow of xnor_d is
+begin
+Y<=A xnor B;
+end Dataflow;
+
+Schematic:
+TBW Code:
+entity xnor_d_tb is
+    --Port();
+end xnor_d_tb;
+
+architecture Dataflow of xnor_d_tb is
+component xnor_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:xnor_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+7. Implementation of NAND Gate in Dataflow Model
+VHDL Code:
+entity nand_df is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nand_df;
+architecture Dataflow of nand_df is
+begin
+Y<=A nand B;
+end Dataflow;
+
+Schematic:
+
+
+TBW Code:
+entity nand_df_tb is
+--  Port ( );
+end nand_df_tb;
+
+architecture Dataflow of nand_df_tb is
+
+component nand_df is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nand_df port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+
+DAY 2: 17/3/25
+UNIVERSAL GATES: NAND
+1. Implementation of AND Gate using NAND Gate 
+VHDL Code:
+entity nand_and_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nand_and_d;
+architecture Dataflow of nand_and_d is
+begin
+Y<=(A nand B) nand (A nand B);
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity nand_and_tb is
+    --Port ();
+end nand_and_tb;
+
+architecture Dataflow of nand_and_tb is
+component nand_and_d is
+Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nand_and_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+2. Implementation of OR Gate using NAND Gate 
+VHDL Code
+entity nand_or_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nand_or_d;
+architecture Dataflow of nand_or_d is
+begin
+Y<=(A nand A) nand (B nand B);
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity nand_or_d_tb is
+    --Port ();
+end nand_or_d_tb;
+
+architecture Dataflow of nand_or_d_tb is
+component nand_or_d is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nand_or_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+3. Implementation of NOT Gate using NAND Gate 
+VHDL Code:
+entity nand_not_d is
+    Port ( A : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nand_not_d;
+architecture Dataflow of nand_not_d is
+begin
+Y<=A nand A;
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity nand_not_d_tb is
+    --Port ();
+end nand_not_d_tb;
+
+architecture Dataflow of nand_not_d_tb is
+component nand_not_d is
+    Port ( A : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin	
+uut:nand_not_d port map(A=>A1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+
+4. Implementation of XOR Gate using NAND Gate 
+VHDL Code:
+entity nand_xor_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nand_xor_d;
+architecture Dataflow of nand_xor_d is
+begin
+Y<=(A nand (A nand B)) nand ((A nand B) nand B);
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity nand_xor_d_tb is
+    --Port ();
+end nand_xor_d_tb;
+
+architecture Dataflow of nand_xor_d_tb is
+component nand_xor_d is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nand_xor_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+5. Implementation of XNOR Gate using NAND Gate 
+VHDL Code:
+entity nand_xnor_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nand_xnor_d;
+architecture Dataflow of nand_xnor_d is
+begin
+Y<=((A nand A) nand (B nand B)) nand (A nand B);
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity nand_xnor_d_tb is
+    --Port ();
+end nand_xnor_d_tb;
+
+architecture Dataflow of nand_xnor_d_tb is
+component nand_xnor_d is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A:STD_LOGIC:='0';
+signal B:STD_LOGIC:='0';
+signal Y:STD_LOGIC;
+begin
+uut:nand_xnor_d port map(A=>A,B=>B,Y=>Y);
+stim_proc:process
+begin
+wait for 100 ns;
+A<='0';
+B<='1';
+wait for 100 ns;
+A<='1';
+B<='0';
+wait for 100 ns;
+A<='1';
+B<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+UNIVERSAL GATES: NOR
+1. Implementation of AND Gate using NOR Gate 
+VHDL Code:
+entity nor_and_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nor_and_d;
+architecture Dataflow of nor_and_d is
+begin
+Y<=(A nor A) nor (B nor B);
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity nor_and_d_tb is
+    --Port ();
+end nor_and_d_tb;
+
+architecture Dataflow of nor_and_d_tb is
+component nor_and_d is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nor_and_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+
+
+
+2. Implementation of OR Gate using NOR Gate 
+VHDL Code:
+entity nor_or_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nor_or_d;
+architecture Dataflow of nor_or_d is
+begin
+Y<=(A nor B) nor (A nor B);
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity nor_or_d_tb is
+    --Port ();
+end nor_or_d_tb;
+
+architecture Dataflow of nor_or_d_tb is
+component nor_or_d is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nor_or_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+3. Implementation of NOT Gate using NOR Gate 
+VHDL Code:
+entity nor_not_d is
+    Port ( A : in STD_LOGIC;
+               Y : out STD_LOGIC);
+end nor_not_d;
+architecture Dataflow of nor_not_d is
+begin
+Y<=A nor A;
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity nor_not_d_tb is
+    --Port ();
+end nor_not_d_tb;
+
+architecture Dataflow of nor_not_d_tb is
+component nor_not_d is
+end component;
+signal A1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin	
+uut:nor_not_d port map(A=>A1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='1';
+wait;	
+end process;
+    Port ( A : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end Dataflow;
+
+
+
+4. Implementation of XOR Gate using NOR Gate 
+VHDL Code:
+entity nor_xor_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nor_xor_d;
+architecture Dataflow of nor_xor_d is
+begin
+Y<=((A nor A) nor (B nor B)) nor (A nor B);
+end Dataflow;
+
+Schematic:
+
+TBW Code:
+entity nor_xor_d_tb is
+    --Port ();
+end nor_xor_d_tb;
+architecture Dataflow of nor_xor_d_tb is
+component nor_xor_d is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nor_xor_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+
+
+5. Implementation of XNOR Gate using NOR Gate 
+VHDL Code:
+entity nor_xnor_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nor_xnor_d;
+architecture Dataflow of nor_xnor_d is
+begin
+Y<=((A nor B) nor A) nor ((A nor B) nor B);
+end Dataflow;
+
+Schematic:TBW Code:
+entity nor_xnor_d_tb is
+    --Port ();
+end nor_xnor_d_tb;
+
+architecture Dataflow of nor_xnor_d_tb is
+component nor_xnor_d is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nor_xnor_d port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+DAY 3: 24/3/25
+BEHAVIORAL MODEL
+1. Implementation of OR Gate in Behavioral Model 
+VHDL Code:
+entity or_bv is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end or_bv;
+architecture Behavioral of or_bv is
+begin
+    process(A,B)
+begin
+if(A='0' and B='0') then
+    Y<='0';
+else
+    Y<='1';
+end if;
+end process;
+end Behavioral;
+
+Schematic:
+
+TBW Code:
+entity or_bv_tb is
+    --Port ();
+end or_bv_tb;
+
+architecture Behavioral of or_bv_tb is
+component or_bv is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:or_bv port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Behavioral;
+
+
+
+2. Implementation of AND Gate in Behavioral Model 
+VHDL Code:
+entity and_bv is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end and_bv;
+architecture Behavioral of and_bv is
+begin
+    process(A,B)
+begin
+if(A='1' and B='1') then
+    Y<='1';
+else
+    Y<='0';
+end if;
+end process;
+end Behavioral;
+
+Schematic:
+ 
+TBW Code:
+entity and_bv_tb is
+    --Port ();
+end and_bv_tb;
+
+architecture Behavioral of and_bv_tb is
+component and_bv is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:and_bv port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Behavioral;
+
+
+
+
+3. Implementation of NOT Gate in Behavioral Model 
+VHDL Code:
+entity not_bv is
+    Port ( A : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end not_bv;
+architecture Behavioral of not_bv is
+begin
+    process(A)
+begin
+if(A='1') then
+    Y<='0';
+else
+    Y<='1';
+end if;
+end process;
+end Behavioral;
+
+
+
+
+
+
+Schematic:
+
+
+
+TBW Code:
+entity not_bv_tb is
+--  Port ( );
+end not_bv_tb;
+
+architecture Behavioral of not_bv_tb is
+component not_bv is
+Port ( A : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin	
+uut:not_bv port map(A=>A1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='1';
+wait;	
+end process;
+end Behavioral;
+
+
+
+
+4. Implementation of NAND Gate in Behavioral Model 
+VHDL Code:
+entity nand_bv is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nand_bv;
+architecture Behavioral of nand_bv is
+begin
+    process(A,B)
+begin
+if(A='1' and B='1') then
+    Y<='0';
+else
+    Y<='1';
+end if;
+end process;
+end Behavioral;
+
+Schematic:
+
+TBW Code:
+entity nand_bv_tb is
+--  Port ( );
+end nand_bv_tb;
+
+architecture Behavioral of nand_bv_tb is
+component nand_bv is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nand_bv port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Behavioral;
+
+
+
+
+
+
+5. Implementation of NOR Gate in Behavioral Model 
+VHDL Code:
+entity nor_bv is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end nor_bv;
+architecture Behavioral of nor_bv is
+begin
+    process(A,B)
+begin
+if(A='0' and B='0') then
+    Y<='1';
+else
+    Y<='0';
+end if;
+end process;
+end Behavioral;
+
+Schematic:
+
+TBW Code:
+entity nor_bv_tb is
+--  Port ( );
+end nor_bv_tb;
+
+architecture Behavioral of nor_bv_tb is
+component nor_bv is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:nor_bv port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Behavioral;
+
+
+6. Implementation of XOR Gate in Behavioral Model 
+VHDL Code:
+entity xor_bv is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end xor_bv;
+architecture Behavioral of xor_bv is
+begin
+    process(A,B)
+begin
+if(A=B) then
+    Y<='0';
+else
+    Y<='1';
+end if;
+end process;
+end Behavioral;
+
+
+
+
+
+Schematic: 
+
+
+TBW Code:
+entity xor_bv_tb is
+--  Port ( );
+end xor_bv_tb;
+
+architecture Behavioral of xor_bv_tb is
+component xor_bv is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:xor_bv port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Behavioral;
+
+
+
+
+
+
+7. Implementation of XNOR Gate in Behavioral Model 
+VHDL Code:
+entity xnor_bv is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end xnor_bv;
+architecture Behavioral of xnor_bv is
+begin
+    process(A,B)
+begin
+if(A=B) then
+    Y<='1';
+else
+    Y<='0';
+end if;
+end process;
+end Behavioral;
+
+Schematic:
+
+TBW Code:
+entity xnor_bv_tb is
+--  Port ( );
+end xnor_bv_tb;
+
+architecture Behavioral of xnor_bv_tb is
+component xnor_bv is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal Y1:STD_LOGIC;
+begin
+uut:xnor_bv port map(A=>A1,B=>B1,Y=>Y1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Behavioral;
+
+
+
+
+DAY 4: 21/4/25
+Half Adder
+1. Implementation of Half Adder in  Dataflow Model
+VHDL Code:
+entity half_adder is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           S : out STD_LOGIC;
+           C : out STD_LOGIC);
+end half_adder;
+
+architecture Dataflow of half_adder is
+begin
+S<= A xor B;
+C<=A and B;
+end Dataflow;
+
+Schematic:
+
+
+TBW Code:
+entity half_adder_tb is
+--  Port ( );
+end half_adder_tb;
+
+architecture Dataflow of half_adder_tb is
+component half_adder is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       S : out STD_LOGIC;
+       C : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal S1:STD_LOGIC;
+signal C1:STD_LOGIC;
+begin
+uut:half_adder port map(A=>A1,B=>B1,S=>S1,C=>C1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+2. Implementation of Half Adder in Behavioral model
+VHDL Code:
+entity half_adder_bv is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           S : out STD_LOGIC;
+           C : out STD_LOGIC);
+end half_adder_bv;
+architecture Behavioral of half_adder_bv is
+begin
+process(A,B)
+begin
+if(A=B) then
+    S<='0';
+else
+    S<='1';
+end if;
+if(A='1' and B='1') then
+    C<='1';
+else
+    C<='0';
+end if;
+end process;
+end Behavioral;
+
+Schematic:
+
+TBW Code:
+entity half_adder_bv_tb is
+--  Port ( );
+end half_adder_bv_tb;
+
+architecture Behavioral of half_adder_bv_tb is
+component half_adder_bv is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       S : out STD_LOGIC;
+       C : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal S1:STD_LOGIC;
+signal C1:STD_LOGIC;
+begin
+uut:half_adder_bv port map(A=>A1,B=>B1,S=>S1,C=>C1);
+stim_proc:process
+begin
+wait for 100 ns;
+A1<='0';
+B1<='1';
+wait for 100 ns;
+A1<='1';
+B1<='0';
+wait for 100 ns;
+A1<='1';
+B1<='1';
+wait;	
+end process;
+end Behavioral;
+
+
+
+
+Full Adder
+1. Implementation of Full Adder in Dataflow Model
+VHDL Code:
+entity full_adder_df is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           C : in STD_LOGIC;
+           Sum : out STD_LOGIC;
+           Carry : out STD_LOGIC);
+end full_adder_df;
+architecture Dataflow of full_adder_df is
+begin
+Sum<= A xor B xor C;
+Carry<=(A and B)or(B and C)or(C and A);
+end Dataflow;
+Schematic:
+
+TBW Code:
+entity full_adder_df_tb is
+--  Port ( );
+end full_adder_df_tb;
+
+architecture Dataflow of full_adder_df_tb is
+component full_adder_df is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       C : in STD_LOGIC;
+       Sum : out STD_LOGIC;
+       Carry : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal C1:STD_LOGIC:='0';
+signal Sum1:STD_LOGIC;
+signal Carry1:STD_LOGIC;
+begin
+uut:full_adder_df port map(A=>A1,B=>B1,C=>C1,Sum=>Sum1,Carry=>Carry1);
+stim_proc:process
+begin
+wait for 50 ns;
+A1<='0';
+B1<='0';
+C1<='1';
+wait for 50 ns;
+A1<='0';
+B1<='1';
+C1<='0';
+wait for 50 ns;
+A1<='0';
+B1<='1';
+C1<='1';
+wait for 50 ns;
+A1<='1';
+B1<='0';
+C1<='0';
+wait for 50 ns;
+A1<='1';
+B1<='0';
+C1<='1';
+wait for 50 ns;
+A1<='1';
+B1<='1';
+C1<='0';
+wait for 50 ns;
+A1<='1';
+B1<='1';
+C1<='1';
+wait;	
+end process;
+end Dataflow;
+
+
+
+
+
+2. Implementation of Full Adder in Behavioral Model
+VHDL Code:
+entity full_adder_bv is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           C : in STD_LOGIC;
+           Sum : out STD_LOGIC;
+           Carry : out STD_LOGIC);
+end full_adder_bv;
+architecture Behavioral of full_adder_bv is
+begin
+process(A,B,C)
+begin
+if(A='0') then
+    if(B=C) then
+        Sum<='0';
+    else
+        Sum<='1';
+    end if;
+else
+    if(B=C) then
+        Sum<='1';
+    else
+        Sum<='0';
+    end if;
+end if;
+if(A='0') then
+    if(B='1' and C='1') then
+        Carry<='1';
+    else
+        Carry<='0';
+    end if;
+else
+    if(B='0' and C='0') then
+        Carry<='0';
+    else
+        Carry<='1';
+    end if;
+end if;
+end process;
+end Behavioral;
+
+Schematic:
+
+
+TBW Code:
+entity full_adder_bv_tb is
+--  Port ( );
+end full_adder_bv_tb;
+
+architecture Behavioral of full_adder_bv_tb is
+component full_adder_bv is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       C : in STD_LOGIC;
+       Sum : out STD_LOGIC;
+       Carry : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal C1:STD_LOGIC:='0';
+signal Sum1:STD_LOGIC;
+signal Carry1:STD_LOGIC;
+begin
+uut:full_adder_bv port map(A=>A1,B=>B1,C=>C1,Sum=>Sum1,Carry=>Carry1);
+stim_proc:process
+begin
+wait for 50 ns;
+A1<='0';
+B1<='0';
+C1<='1';
+wait for 50 ns;
+A1<='0';
+B1<='1';
+C1<='0';
+wait for 50 ns;
+A1<='0';
+B1<='1';
+C1<='1';
+wait for 50 ns;
+A1<='1';
+B1<='0';
+C1<='0';
+wait for 50 ns;
+A1<='1';
+B1<='0';
+C1<='1';
+wait for 50 ns;
+A1<='1';
+B1<='1';
+C1<='0';
+wait for 50 ns;
+A1<='1';
+B1<='1';
+C1<='1';
+wait;	
+end process; 
+end Behavioral; 
+
+
+
+3. Implementation of Full Adder in Structural Model
+VHDL Code:
+entity full_adder_struc is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           C : in STD_LOGIC;
+           Sum : out STD_LOGIC;
+           Carry : out STD_LOGIC);
+end full_adder_struc;
+architecture Structural of full_adder_struc is
+component half_adder is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           S : out STD_LOGIC;
+           C : out STD_LOGIC);
+end component;
+component or_d is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           Y : out STD_LOGIC);
+end component;
+signal C1,C2,S1:STD_LOGIC;
+begin
+L1:half_adder port map(A,B,S1,C1);
+L2:half_adder port map(S1,C,Sum,C2);
+L3:or_d port map(C1,C2,Carry);
+end Structural;
+
+Schematic:
+
+TBW Code:
+entity full_adder_struc_tb is
+--  Port ( );
+end full_adder_struc_tb;
+
+architecture Structural of full_adder_struc_tb is
+component full_adder_struc is
+Port ( A : in STD_LOGIC;
+       B : in STD_LOGIC;
+       C : in STD_LOGIC;
+       Sum : out STD_LOGIC;
+       Carry : out STD_LOGIC);
+end component;
+signal A1:STD_LOGIC:='0';
+signal B1:STD_LOGIC:='0';
+signal C1:STD_LOGIC:='0';
+signal Sum1:STD_LOGIC;
+signal Carry1:STD_LOGIC;
+begin
+uut:full_adder_struc port map(A=>A1,B=>B1,C=>C1,Sum=>Sum1,Carry=>Carry1);
+stim_proc:process
+begin
+wait for 50 ns;
+A1<='0';
+B1<='0';
+C1<='1';
+wait for 50 ns;
+A1<='0';
+B1<='1';
+C1<='0';
+wait for 50 ns;
+A1<='0';
+B1<='1';
+C1<='1';
+wait for 50 ns;
+A1<='1';
+B1<='0';
+C1<='0';
+wait for 50 ns;
+A1<='1';
+B1<='0';
+C1<='1';
+wait for 50 ns;
+A1<='1';
+B1<='1';
+C1<='0';
+wait for 50 ns;
+A1<='1';
+B1<='1';
+C1<='1';
+wait;	
+end process;
+end Structural;
+
+
+
+
+
